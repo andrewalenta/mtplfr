@@ -39,6 +39,6 @@ def explore_data(df):
     print(type(X))
     mod = sm.OLS(y, X.astype(float))    # Describe model
 
-    res = mod.fit()       # Fit model
+    res = mod.fit()       # Fit model try
 
     print(res.summary())
