@@ -1,13 +1,6 @@
 import pandas as pd
 import statsmodels.api as sm
-import numpy as np
-
-from sklearn.compose import ColumnTransformer
-from sklearn.linear_model import TweedieRegressor
-from sklearn.preprocessing import FunctionTransformer, OneHotEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-#blabla
+from statsmodels.formula.api import ols
 
 def explore_data(df):
     print(df.columns)
@@ -30,3 +23,7 @@ def explore_data(df):
     res = mod.fit()       # Fit model try
 
     print(res.summary())
+    X_ols = X.to_numpy()
+    freq_brand = ols("Frequency ~ VehPower",data=X).fit()
+    print("")
+    print(freq_brand.params)
