@@ -65,5 +65,6 @@ def get_data():
         #X,y ...
         #scores
             #randomizedsearch
+    #gridsearch
         #featureimportance
         #metrics
