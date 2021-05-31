@@ -40,3 +40,16 @@ def ols_mtpl(df):
     X_ols = X.to_numpy()
     freq_brand = ols("Frequency ~ VehPower",data=X_train).fit()
     print(freq_brand.params)
+    print(freq_brand.resid)
+
+#    fig = plt.figure()
+#    sns.regplot(x="DrivAge",
+#            y="mass_g",
+#            ci=None,
+#            data=bream,)
+#    sns.scatterplot(x="length_cm",
+#                y="mass_g",
+#    plt.show()
+#    data=prediction_data,
+#    color="red",
+#    marker="s")
