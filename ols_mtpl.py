@@ -41,7 +41,8 @@ def ols_mtpl(df):
     freq_brand = ols("Frequency ~ VehPower",data=X_train).fit()
     print(freq_brand.params)
     print(freq_brand.resid)
-
+    print(freq_brand.rsquared)
+    print(freq_brand.mse_resid)
 #    fig = plt.figure()
 #    sns.regplot(x="DrivAge",
 #            y="mass_g",
