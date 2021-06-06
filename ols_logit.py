@@ -5,9 +5,16 @@ import statsmodels.api as sm
 from sklearn.model_selection import train_test_split
 
 def ols_logit(df):
-    y = df['Frequency']
-    X = df.drop(columns=[
-        'Frequency'])  # ['VehPower', 'VehAge', 'DrivAge', 'BonusMalus', 'VehBrand', 'VehGas', 'Area', 'Density', 'Region']
+
+    y = []
+    for elems in df['Frequency']:
+        if elems > 0:
+            y.append(1)
+        else:
+            y.append(0)
+
+
+    X = df.drop(columns=['Frequency'])  # ['VehPower', 'VehAge', 'DrivAge', 'BonusMalus', 'VehBrand', 'VehGas', 'Area', 'Density', 'Region']
     X1 = df[['DrivAge', 'VehPower', 'VehAge', 'Density', 'BonusMalus']]
     cat_data = ['VehBrand', 'VehGas', 'Area', 'Region']
     num_data = ['VehPower', 'VehAge', 'DrivAge', 'BonusMalus', 'Density']
@@ -30,8 +37,11 @@ def ols_logit(df):
     y_pred = res.predict(X_test)
 
     print("")
-    print(y_pred)
+
 
     X_ols = X.to_numpy()
-    freq_brand = logit("Frequency ~ VehPower", data=X_train).fit()
+
+    X["propensity"] = y
+
+    freq_brand = logit("propensity ~ VehPower ", data=X).fit()
 

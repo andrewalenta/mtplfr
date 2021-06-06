@@ -5,9 +5,10 @@ from sklearn.model_selection import train_test_split
 
 
 def ols_mtpl(df):
-    print(df.columns)
+
   
     y = df['Frequency']
+    df['Frequency'].describe()
     X = df.drop(columns=['Frequency'])#['VehPower', 'VehAge', 'DrivAge', 'BonusMalus', 'VehBrand', 'VehGas', 'Area', 'Density', 'Region']
     X1 = df[['DrivAge', 'VehPower', 'VehAge', 'Density', 'BonusMalus']]
     cat_data = ['VehBrand', 'VehGas', 'Area', 'Region']
@@ -33,12 +34,9 @@ def ols_mtpl(df):
 
     y_pred = res.predict(X_test)
 
-    print("")
-    print(y_pred)
-
 
     X_ols = X.to_numpy()
-    freq_brand = ols("Frequency ~ VehPower",data=X_train).fit()
+ #   freq_brand = ols("Frequency ~ VehPower",data=X_train).fit()
     print(freq_brand.params)
     print(freq_brand.resid)
     print(freq_brand.rsquared)

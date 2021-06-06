@@ -48,7 +48,7 @@ def get_data():
 #    ax2.set_title("Frequency (number of claims per year)")
 #    _ = g_df["Frequency"].hist(bins=30, log=True, ax=ax2)
 #    plt.show()
-    
+
     return g_df
 
 
