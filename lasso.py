@@ -6,4 +6,4 @@ def lasso(df):
 
     X, y = newsgroups.data, newsgroups.target
 
-    print(newsgroups)
+   # print(newsgroups)

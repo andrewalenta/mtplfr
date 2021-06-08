@@ -4,6 +4,7 @@ import ols_mtpl
 import glm
 import ols_logit as ols_l
 import lasso
+from ridge import ridge
 
 if __name__ == '__main__':
     df = gd.get_data()
@@ -11,5 +12,6 @@ if __name__ == '__main__':
  #   glm.glm(df)
     ols_l.ols_logit(df)
     lasso.lasso(df)
+    ridge(df)
     #test
 
