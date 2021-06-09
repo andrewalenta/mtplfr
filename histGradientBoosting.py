@@ -1,6 +1,10 @@
-import sklearn.datasets
+from sklearn.experimental import enable_hist_gradient_boosting  # noqa
+# now you can import normally from ensemble
+from sklearn.ensemble import HistGradientBoostingClassifier
 
-def lasso(df):
+
+def histgrad(df):
+
 
     #newsgroups = sklearn.datasets.fetch_20newsgroups_vectorized()
     y = df['Frequency']
@@ -19,9 +23,3 @@ def lasso(df):
     X = df.drop(columns=['VehBrand', 'VehGas', 'Area', 'Region'])
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
-    ridge = Ridge(alpha=0.5, normalize=True).fit(X_train,
-                                                 y_train)
-    linear_model.Lasso(alpha=0.1)
-    X, y = newsgroups.data, newsgroups.target
-
-   # print(newsgroups)
