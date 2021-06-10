@@ -1,5 +1,7 @@
 import sklearn.datasets
-
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import Ridge, Lasso
 def lasso(df):
 
     #newsgroups = sklearn.datasets.fetch_20newsgroups_vectorized()
@@ -21,7 +23,7 @@ def lasso(df):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
     ridge = Ridge(alpha=0.5, normalize=True).fit(X_train,
                                                  y_train)
-    linear_model.Lasso(alpha=0.1)
-    X, y = newsgroups.data, newsgroups.target
+    Lasso(alpha=0.1)
+   # X, y = newsgroups.data, newsgroups.target
 
    # print(newsgroups)

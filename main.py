@@ -5,6 +5,7 @@ import glm
 import ols_logit as ols_l
 import lasso
 from ridge import ridge
+from evaluate_best import mutli_model
 
 if __name__ == '__main__':
     df = gd.get_data()
@@ -13,5 +14,6 @@ if __name__ == '__main__':
     ols_l.ols_logit(df)
     lasso.lasso(df)
     ridge(df)
+    mutli_model(df)
     #test
 
