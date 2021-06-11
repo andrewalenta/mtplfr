@@ -7,6 +7,7 @@ from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB
 from xgboost import XGBClassifier
 from sklearn.model_selection import KFold, cross_validate
+from sklearn.metrics import classification_report
 
 def mutli_model(df):
     """ Function to determine best model archietecture """
@@ -17,7 +18,7 @@ def mutli_model(df):
             y.append(1)
         else:
             y.append(0)
-
+    dfs = []
 
     X = df.drop(columns=['Frequency'])  # ['VehPower', 'VehAge', 'DrivAge', 'BonusMalus', 'VehBrand', 'VehGas', 'Area', 'Density', 'Region']
     X1 = df[['DrivAge', 'VehPower', 'VehAge', 'Density', 'BonusMalus']]
