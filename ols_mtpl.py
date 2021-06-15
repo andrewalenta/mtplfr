@@ -36,7 +36,7 @@ def ols_mtpl(df):
 
 
     X_ols = X.to_numpy()
- #   freq_brand = ols("Frequency ~ VehPower",data=X_train).fit()
+    freq_brand = ols("Frequency ~ VehPower",data=X_train).fit()
     print(freq_brand.params)
     print(freq_brand.resid)
     print(freq_brand.rsquared)

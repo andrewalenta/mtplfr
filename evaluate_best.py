@@ -40,8 +40,8 @@ def mutli_model(df):
     models = [
         ('LogReg', LogisticRegression()),
         ('RF', RandomForestClassifier()),
-        ('KNN', KNeighborsClassifier()),
-        ('SVM', SVC()),
+       # ('KNN', KNeighborsClassifier()),
+       # ('SVM', SVC()),
         ('GNB', GaussianNB()),
         ('XGB', XGBClassifier(eval_metric="error"))
     ]
